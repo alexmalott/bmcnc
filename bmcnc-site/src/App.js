@@ -11,6 +11,7 @@ import {
 } from 'reactstrap';
 import "./App.css";
 import Routes from "./Routes";
+import {ParallaxProvider} from "react-scroll-parallax";
 
 class App extends Component {
     constructor(props) {
@@ -30,7 +31,7 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <ParallaxProvider>
                 <Navbar color="light" light expand="md">
                     <NavbarBrand>
                         <Link to="/">BMCNC</Link>
@@ -56,9 +57,8 @@ class App extends Component {
                         </Nav>
                     </Collapse>
                 </Navbar>
-                <br/>
                 <Routes/>
-            </div>
+            </ParallaxProvider>
         );
     }
 }

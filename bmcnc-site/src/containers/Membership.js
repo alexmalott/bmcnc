@@ -7,39 +7,25 @@ import {
     Form,
     Label,
     Input,
-    ButtonGroup,
-    Button,
+    InputGroup,
+    InputGroupText,
+    InputGroupAddon,
     Card,
     CardBody,
     CardHeader
 } from 'reactstrap';
 
 export default class Membership extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            toggle: false
-        };
-    }
-
     render() {
         return (
             <div className="Membership">
+                <br/>
                 <Container>
                     <Card>
                         <CardHeader>
                             Membership
                         </CardHeader>
                         <CardBody>
-                            <div className="d-flex flex-column">
-                                <ButtonGroup>
-                                    <Button active={!this.state.toggle} color="primary"
-                                            onClick={() => this.setState({toggle: false})}>New</Button>
-                                    <Button active={this.state.toggle} color="primary"
-                                            onClick={() => this.setState({toggle: true})}>Renew</Button>
-                                </ButtonGroup>
-                            </div>
-                            <br/>
                             <Form>
                                 <Card>
                                     <CardHeader>
@@ -60,24 +46,22 @@ export default class Membership extends Component {
                                                 </FormGroup>
                                             </Col>
                                         </Row>
-                                        <fieldset hidden={this.state.toggle}>
-                                            <Row form>
-                                                <Col md={6}>
-                                                    <FormGroup>
-                                                        <Label for="emailOne">Email</Label>
-                                                        <Input type="email" name="emailOne" id="emailOne"
-                                                               placeholder="example@example.com"/>
-                                                    </FormGroup>
-                                                </Col>
-                                                <Col md={6}>
-                                                    <FormGroup>
-                                                        <Label for="phoneOne">Telephone</Label>
-                                                        <Input type="tel" name="phoneOne" id="phoneOne"
-                                                               placeholder="555-555-5555"/>
-                                                    </FormGroup>
-                                                </Col>
-                                            </Row>
-                                        </fieldset>
+                                        <Row form>
+                                            <Col md={6}>
+                                                <FormGroup>
+                                                    <Label for="emailOne">Email</Label>
+                                                    <Input type="email" name="emailOne" id="emailOne"
+                                                           placeholder="example@example.com"/>
+                                                </FormGroup>
+                                            </Col>
+                                            <Col md={6}>
+                                                <FormGroup>
+                                                    <Label for="phoneOne">Telephone</Label>
+                                                    <Input type="tel" name="phoneOne" id="phoneOne"
+                                                           placeholder="555-555-5555"/>
+                                                </FormGroup>
+                                            </Col>
+                                        </Row>
                                     </CardBody>
                                 </Card>
                                 <br/>
@@ -100,59 +84,106 @@ export default class Membership extends Component {
                                                 </FormGroup>
                                             </Col>
                                         </Row>
-                                        <fieldset hidden={this.state.toggle}>
-                                            <Row form>
-                                                <Col md={6}>
-                                                    <FormGroup>
-                                                        <Label for="emailTwo">Email</Label>
-                                                        <Input type="email" name="emailTwo" id="emailTwo"
-                                                               placeholder="example@example.com"/>
-                                                    </FormGroup>
-                                                </Col>
-                                                <Col md={6}>
-                                                    <FormGroup>
-                                                        <Label for="phoneTwo">Telephone</Label>
-                                                        <Input type="tel" name="phoneTwo" id="phoneTwo"
-                                                               placeholder="555-555-5555"/>
-                                                    </FormGroup>
-                                                </Col>
-                                            </Row>
-                                        </fieldset>
+                                        <Row form>
+                                            <Col md={6}>
+                                                <FormGroup>
+                                                    <Label for="emailTwo">Email</Label>
+                                                    <Input type="email" name="emailTwo" id="emailTwo"
+                                                           placeholder="example@example.com"/>
+                                                </FormGroup>
+                                            </Col>
+                                            <Col md={6}>
+                                                <FormGroup>
+                                                    <Label for="phoneTwo">Telephone</Label>
+                                                    <Input type="tel" name="phoneTwo" id="phoneTwo"
+                                                           placeholder="555-555-5555"/>
+                                                </FormGroup>
+                                            </Col>
+                                        </Row>
                                     </CardBody>
                                 </Card>
                                 <br/>
-                                <fieldset hidden={this.state.toggle}>
-                                    <FormGroup>
-                                        <Label for="address">Address</Label>
-                                        <Input type="text" name="address" id="address"
-                                               placeholder="1234 Main St"/>
-                                    </FormGroup>
-                                    <FormGroup>
-                                        <Label for="address2">Address 2</Label>
-                                        <Input type="text" name="address2" id="address2"
-                                               placeholder="Apartment, studio, or floor"/>
-                                    </FormGroup>
-                                    <Row form>
-                                        <Col md={6}>
-                                            <FormGroup>
-                                                <Label for="city">City</Label>
-                                                <Input type="text" name="city" id="city"/>
-                                            </FormGroup>
-                                        </Col>
-                                        <Col md={4}>
-                                            <FormGroup>
-                                                <Label for="state">State</Label>
-                                                <Input type="text" name="state" id="state"/>
-                                            </FormGroup>
-                                        </Col>
-                                        <Col md={2}>
-                                            <FormGroup>
-                                                <Label for="zip">Zip</Label>
-                                                <Input type="text" name="zip" id="zip"/>
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                </fieldset>
+                                <FormGroup>
+                                    <Label for="address">Address</Label>
+                                    <Input type="text" name="address" id="address"
+                                           placeholder="1234 Main St"/>
+                                </FormGroup>
+                                <FormGroup>
+                                    <Label for="address2">Address 2</Label>
+                                    <Input type="text" name="address2" id="address2"
+                                           placeholder="Apartment, studio, or floor"/>
+                                </FormGroup>
+                                <Row form>
+                                    <Col md={6}>
+                                        <FormGroup>
+                                            <Label for="city">City</Label>
+                                            <Input type="text" name="city" id="city"/>
+                                        </FormGroup>
+                                    </Col>
+                                    <Col md={4}>
+                                        <FormGroup>
+                                            <Label for="state">State</Label>
+                                            <Input type="text" name="state" id="state"/>
+                                        </FormGroup>
+                                    </Col>
+                                    <Col md={2}>
+                                        <FormGroup>
+                                            <Label for="zip">Zip</Label>
+                                            <Input type="text" name="zip" id="zip"/>
+                                        </FormGroup>
+                                    </Col>
+                                </Row>
+                                <Row form>
+                                    <Col>
+                                        <FormGroup>
+                                            <Label for="renewal">If you are a member of the North American MGB Register,
+                                            please provide your last renewal date below.</Label>
+                                            <Input type="date" name="renewal" id="renewal"/>
+                                        </FormGroup>
+                                    </Col>
+                                </Row>
+                                You can elect to provide all, some, or none of this information for club directory
+                                purposes.
+                                <br/>
+                                The club directory is provided only to club members.
+                                <br/>
+                                <br/>
+                                <InputGroup>
+                                    <InputGroupAddon addonType="prepend">
+                                        <InputGroupText>
+                                            <Input addon type="checkbox" name="nameConsent" id="nameConsent"
+                                                   aria-label="Publish my Name"/>
+                                        </InputGroupText>
+                                    </InputGroupAddon>
+                                    <Input disabled value="Publish my Name"/>
+                                </InputGroup>
+                                <InputGroup>
+                                    <InputGroupAddon addonType="prepend">
+                                        <InputGroupText>
+                                            <Input addon type="checkbox" name="emailConsent" id="emailConsent"
+                                                   aria-label="Publish my Email Address"/>
+                                        </InputGroupText>
+                                    </InputGroupAddon>
+                                    <Input disabled value="Publish my Email Address"/>
+                                </InputGroup>
+                                <InputGroup>
+                                    <InputGroupAddon addonType="prepend">
+                                        <InputGroupText>
+                                            <Input addon type="checkbox" name="phoneConsent" id="phoneConsent"
+                                                   aria-label="Publish my Phone Number"/>
+                                        </InputGroupText>
+                                    </InputGroupAddon>
+                                    <Input disabled value="Publish my Phone Number"/>
+                                </InputGroup>
+                                <InputGroup>
+                                    <InputGroupAddon addonType="prepend">
+                                        <InputGroupText>
+                                            <Input addon type="checkbox" name="addressConsent" id="addressConsent"
+                                                   aria-label="Publish my Physical Address"/>
+                                        </InputGroupText>
+                                    </InputGroupAddon>
+                                    <Input disabled value="Publish my Physical Address"/>
+                                </InputGroup>
                             </Form>
                         </CardBody>
                     </Card>
